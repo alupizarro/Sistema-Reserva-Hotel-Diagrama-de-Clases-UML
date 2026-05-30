@@ -1,10 +1,33 @@
-
-# 1. Sistema de Reserva de Hotel  
-## 1.1 Diagrama de Clases UML
+#  Sistema de Reserva de Hotel  
+##  Diagrama de Clases UML
 
 ---
 
-# 2. Descripción del Proyecto
+# Integrantes
+- Nombre del alumno: Lucas Cioccale
+- Nombre del alumno: Micaela Coradini
+- Nombre del alumno: Karen Tymoszcuk
+- Nombre del alumno: Silvina Palaoro
+- Nombre del alumno: Alejandra Pizarro
+
+---
+
+# Materias
+- Alfabetizacion Digital y Introduccion al Analisis Sistemico
+
+---
+
+# Profesor
+- Narciso Pérez
+
+---
+
+# Fecha
+- 30 /05 / 2026
+
+---  
+
+#  Descripción del Proyecto
 
 Este sistema modela la gestión de reservas de un hotel mediante un diseño orientado a objetos. Representa los procesos principales del negocio, incluyendo la administración de habitaciones, reservas, pagos, comprobantes y control de estados.
 
@@ -12,7 +35,7 @@ El sistema está desarrollado bajo el enfoque de **modelado UML (Lenguaje Unific
 
 ---
 
-# 3. Objetivo
+#  Objetivo
 
 - Diseñar la estructura lógica de un sistema de reservas hoteleras
 - Representar entidades principales del dominio
@@ -22,7 +45,7 @@ El sistema está desarrollado bajo el enfoque de **modelado UML (Lenguaje Unific
 
 ---
 
-# 4. Alcance del Sistema
+#  Alcance del Sistema
 
 El sistema contempla:
 
