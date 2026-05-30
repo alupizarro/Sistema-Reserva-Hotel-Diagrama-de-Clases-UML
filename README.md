@@ -60,9 +60,46 @@ El sistema contempla:
 
 ---
 
-# 5. Modelo de Clases (UML)
+# Historias de Usuario (US) del Sistema de Reserva de Hotel
 
-## 5.1 Relaciones principales
+US: Crear Reserva COMO cliente, QUIERO registrar una reserva en el hotel, PARA asegurar una habitación disponible en las fechas deseadas. • Criterio de Aceptación: o DADO que existen habitaciones disponibles, o CUANDO el cliente ingresa las fechas y selecciona una habitación, o ENTONCES el sistema debe registrar la reserva y cambiar el estado a “pendiente” o “confirmada”.
+
+US: Consultar Disponibilidad COMO cliente, QUIERO consultar habitaciones disponibles, PARA elegir una opción de hospedaje. • Criterio de Aceptación: o DADO un rango de fechas ingresado, o CUANDO realizo la búsqueda de habitaciones, o ENTONCES el sistema debe mostrar únicamente las habitaciones disponibles.
+
+US: Seleccionar Habitación COMO cliente, QUIERO seleccionar el tipo de habitación, PARA elegir la opción que mejor se adapte a mis necesidades. • Criterio de Aceptación: o DADO que existen habitaciones disponibles, o CUANDO selecciono una habitación, o ENTONCES el sistema debe mostrar precio, capacidad y servicios incluidos.
+
+US: Definir Fechas de Estadía COMO cliente, QUIERO ingresar fecha de entrada y salida, PARA definir correctamente la duración de mi estadía. • Criterio de Aceptación: o DADO que deseo realizar una reserva, o CUANDO ingreso las fechas de estadía, o ENTONCES el sistema debe validar que las fechas sean correctas y disponibles. US: Calcular Precio Total COMO cliente, QUIERO conocer el precio total de la reserva, PARA saber cuánto debo pagar. • Criterio de Aceptación: o DADO una habitación y cantidad de noches seleccionadas, o CUANDO confirmo los datos de la reserva, o ENTONCES el sistema debe calcular automáticamente el precio total.
+
+US: Modificar Reserva COMO cliente, QUIERO modificar mi reserva, PARA cambiar fechas o habitación si es necesario. • Criterio de Aceptación: o DADO una reserva existente, o CUANDO modifico fechas o habitación, o ENTONCES el sistema debe validar disponibilidad y actualizar la reserva.
+
+US: Cancelar Reserva COMO cliente, QUIERO cancelar una reserva, PARA liberar la habitación reservada. • Criterio de Aceptación: o DADO una reserva activa, o CUANDO selecciono la opción “Cancelar Reserva”, o ENTONCES el sistema debe cambiar el estado a “cancelada” y liberar la habitación.
+
+US: Ver Reservas COMO recepcionista, QUIERO visualizar las reservas registradas, PARA controlar la ocupación del hotel. • Criterio de Aceptación: o DADO que existen reservas cargadas, o CUANDO ingreso al listado de reservas, o ENTONCES el sistema debe mostrar cliente, habitación, fechas y estado.
+
+US: Registrar Cliente COMO recepcionista, QUIERO registrar los datos de un cliente, PARA almacenarlos en el sistema. • Criterio de Aceptación: o DADO un nuevo huésped, o CUANDO ingreso sus datos personales, o ENTONCES el sistema debe guardar correctamente la información.
+
+US: Confirmar Reserva COMO recepcionista, QUIERO confirmar una reserva, PARA validar la estadía del cliente. • Criterio de Aceptación: o DADO una reserva pendiente, o CUANDO verifico los datos y confirmo la operación, o ENTONCES el sistema debe cambiar el estado a “confirmada”.
+
+US: Gestión de Estados de Reserva COMO recepcionista, QUIERO administrar los estados de las reservas, PARA mejorar el control del hotel. • Criterio de Aceptación: o DADO una reserva registrada, o CUANDO ocurre una acción como confirmar, cancelar o finalizar, o ENTONCES el sistema debe actualizar automáticamente el estado correspondiente.
+
+US: Generar Comprobante COMO recepcionista, QUIERO generar un comprobante de reserva, PARA entregar una constancia al cliente. • Criterio de Aceptación: o DADO una reserva confirmada, o CUANDO finaliza el proceso de reserva, o ENTONCES el sistema debe generar un comprobante imprimible o digital.
+
+US: Registrar Check-in COMO recepcionista, QUIERO registrar la llegada del huésped al hotel, PARA cambiar el estado de la reserva a “en curso” y asignarle su habitación. • Criterio de Aceptación: o DADO una reserva confirmada para el día de hoy, o CUANDO selecciono la opción “Check-in” al llegar el cliente, o ENTONCES el sistema debe actualizar el estado de la reserva y bloquear la habitación para que no aparezca como disponible.
+
+US: Registrar Check-out COMO recepcionista, QUIERO registrar la salida del huésped, PARA finalizar la reserva y liberar la habitación. • Criterio de Aceptación: o DADO una reserva en curso, o CUANDO selecciono la opción “Check-out”, o ENTONCES el sistema debe finalizar la reserva y liberar la habitación.
+
+US: Gestión de Pagos COMO administrador, QUIERO registrar pagos de reservas, PARA controlar los ingresos del hotel. • Criterio de Aceptación: o DADO una reserva activa, o CUANDO registro un pago, o ENTONCES el sistema debe guardar el importe y el método de pago utilizado.
+
+US: Gestión de Habitaciones COMO administrador, QUIERO administrar las habitaciones del hotel, PARA mantener actualizado el sistema. • Criterio de Aceptación: o DADO una nueva habitación o modificación, o CUANDO ingreso o actualizo los datos, o ENTONCES el sistema debe guardar correctamente la información.
+
+US: Reportes COMO administrador, QUIERO generar reportes, PARA analizar información del hotel. • Criterio de Aceptación: o DADO información registrada en el sistema, o CUANDO solicito un reporte, o ENTONCES el sistema debe mostrar los datos solicitados correctamente.
+
+US: Control de Disponibilidad Automática COMO administrador, QUIERO actualizar automáticamente la disponibilidad de habitaciones, PARA evitar reservas duplicadas. • Criterio de Aceptación: o DADO una reserva creada o cancelada, o CUANDO cambia el estado de la habitación, o ENTONCES el sistema debe actualizar automáticamente la disponibilidad.
+
+
+#  Modelo de Clases (UML)
+
+##  Relaciones principales
 
 - Cliente 1 → * Reserva  
 - Reserva * → 1 Habitación  
@@ -74,9 +111,9 @@ El sistema contempla:
 
 ---
 
-# 6. Clases del Sistema
+#  Clases del Sistema
 
-## 6.1 Cliente
+##  Cliente
 Representa a los huéspedes del hotel.
 
 Funciones:
@@ -85,7 +122,7 @@ Funciones:
 
 ---
 
-## 6.2 Reserva
+##  Reserva
 Clase principal del sistema.
 
 Funciones:
