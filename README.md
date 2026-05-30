@@ -68,7 +68,9 @@ US: Consultar Disponibilidad COMO cliente, QUIERO consultar habitaciones disponi
 
 US: Seleccionar Habitación COMO cliente, QUIERO seleccionar el tipo de habitación, PARA elegir la opción que mejor se adapte a mis necesidades. • Criterio de Aceptación: o DADO que existen habitaciones disponibles, o CUANDO selecciono una habitación, o ENTONCES el sistema debe mostrar precio, capacidad y servicios incluidos.
 
-US: Definir Fechas de Estadía COMO cliente, QUIERO ingresar fecha de entrada y salida, PARA definir correctamente la duración de mi estadía. • Criterio de Aceptación: o DADO que deseo realizar una reserva, o CUANDO ingreso las fechas de estadía, o ENTONCES el sistema debe validar que las fechas sean correctas y disponibles. US: Calcular Precio Total COMO cliente, QUIERO conocer el precio total de la reserva, PARA saber cuánto debo pagar. • Criterio de Aceptación: o DADO una habitación y cantidad de noches seleccionadas, o CUANDO confirmo los datos de la reserva, o ENTONCES el sistema debe calcular automáticamente el precio total.
+US: Definir Fechas de Estadía COMO cliente, QUIERO ingresar fecha de entrada y salida, PARA definir correctamente la duración de mi estadía. • Criterio de Aceptación: o DADO que deseo realizar una reserva, o CUANDO ingreso las fechas de estadía, o ENTONCES el sistema debe validar que las fechas sean correctas y disponibles. 
+
+US: Calcular Precio Total COMO cliente, QUIERO conocer el precio total de la reserva, PARA saber cuánto debo pagar. • Criterio de Aceptación: o DADO una habitación y cantidad de noches seleccionadas, o CUANDO confirmo los datos de la reserva, o ENTONCES el sistema debe calcular automáticamente el precio total.
 
 US: Modificar Reserva COMO cliente, QUIERO modificar mi reserva, PARA cambiar fechas o habitación si es necesario. • Criterio de Aceptación: o DADO una reserva existente, o CUANDO modifico fechas o habitación, o ENTONCES el sistema debe validar disponibilidad y actualizar la reserva.
 
