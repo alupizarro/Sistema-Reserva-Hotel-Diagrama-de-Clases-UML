@@ -96,6 +96,113 @@ US: Reportes COMO administrador, QUIERO generar reportes, PARA analizar informac
 
 US: Control de Disponibilidad Automática COMO administrador, QUIERO actualizar automáticamente la disponibilidad de habitaciones, PARA evitar reservas duplicadas. • Criterio de Aceptación: o DADO una reserva creada o cancelada, o CUANDO cambia el estado de la habitación, o ENTONCES el sistema debe actualizar automáticamente la disponibilidad.
 
+KAREN
+Cliente + Reserva
+Trabaja con:
+Clase Cliente
+Clase Reserva
+Relación Cliente ↔ Reserva
+Se encarga de:
+Registrar clientes
+Crear reservas
+Modificar reservas
+Cancelar reservas
+Validar fechas de estadía
+Calcular precio total de la reserva
+Historias de Usuario asociadas:
+Crear Reserva
+Definir Fechas de Estadía
+Modificar Reserva
+Cancelar Reserva
+Calcular Precio Total
+Archivos:
+Cliente.java
+Reserva.java
+
+
+MICAELA
+Habitación
+Trabaja con:
+Clase Habitacion
+Se encarga de:
+Consultar disponibilidad
+Información de habitaciones
+Actualizar datos de habitaciones
+Control de disponibilidad automática
+Estado disponible / ocupada
+Historias de Usuario asociadas:
+Consultar Disponibilidad
+Seleccionar Habitación
+Control de Disponibilidad Automática
+Gestión de Habitaciones
+Archivos:
+Habitacion.java
+
+SILVINA
+Pago + Comprobante
+Trabaja con:
+Clase Pago
+Clase Comprobante
+Se encarga de:
+Registrar pagos
+Validar pagos
+Registrar importe
+Registrar método de pago
+Generar comprobantes
+Imprimir comprobantes
+Historias de Usuario asociadas:
+Gestión de Pagos
+Generar Comprobante
+Archivos:
+Pago.java
+Comprobante.java
+
+LUCAS
+Recepcionista
+Trabaja con:
+Clase Recepcionista
+Se encarga de:
+Confirmar reservas
+Gestionar estados
+Registrar Check-in
+Registrar Check-out
+Ver reservas
+Registrar clientes
+Historias de Usuario asociadas:
+Ver Reservas
+Registrar Cliente
+Confirmar Reserva
+Gestión de Estados de Reserva
+Registrar Check-in
+Registrar Check-out
+Archivos:
+Recepcionista.java
+
+ALEJANDRA 
+Administrador + Reporte + EstadoReserva
+Trabaja con:
+Clase Administrador
+Clase Reporte
+Enumeración EstadoReserva
+Se encarga de:
+Gestionar habitaciones
+Administrar el sistema
+Generar reportes
+Visualizar reportes
+Exportar reportes
+Gestionar estados de reservas
+Controlar disponibilidad automática
+Historias de Usuario asociadas:
+Gestión de Habitaciones
+Reportes
+Control de Disponibilidad Automática
+Gestión de Estados de Reserva
+Archivos:
+Administrador.java
+Reporte.java
+EstadoReserva.java
+
+---
 
 #  Modelo de Clases (UML)
 
@@ -134,7 +241,7 @@ Funciones:
 
 ---
 
-## 6.3 Habitación
+##  Habitación
 Representa las habitaciones del hotel.
 
 Funciones:
@@ -144,7 +251,7 @@ Funciones:
 
 ---
 
-## 6.4 Pago
+##  Pago
 Gestiona las transacciones económicas.
 
 Funciones:
@@ -154,7 +261,7 @@ Funciones:
 
 ---
 
-## 6.5 Comprobante
+## Comprobante
 Documento generado a partir de una reserva o pago.
 
 Funciones:
@@ -163,7 +270,7 @@ Funciones:
 
 ---
 
-## 6.6 Recepcionista
+## Recepcionista
 Usuario operativo del sistema.
 
 Funciones:
@@ -174,7 +281,7 @@ Funciones:
 
 ---
 
-## 6.7 Administrador
+## Administrador
 Usuario con control total del sistema.
 
 Funciones:
@@ -185,7 +292,7 @@ Funciones:
 
 ---
 
-## 6.8 Reporte
+##  Reporte
 Permite el análisis del sistema.
 
 Funciones:
@@ -195,7 +302,7 @@ Funciones:
 
 ---
 
-## 6.9 EstadoReserva
+##  EstadoReserva
 Define el ciclo de vida de una reserva.
 
 Estados:
@@ -207,7 +314,7 @@ Estados:
 
 ---
 
-# 7. Ciclo de Vida de una Reserva
+#  Ciclo de Vida de una Reserva
 
 El flujo de estados es:
 
@@ -217,7 +324,7 @@ Pendiente → Cancelada
 
 ---
 
-# 8. Tecnologías Utilizadas
+#  Tecnologías Utilizadas
 
 - UML (Lenguaje Unificado de Modelado)
 - Git / GitHub
@@ -225,7 +332,7 @@ Pendiente → Cancelada
 
 ---
 
-# 9. Estructura del Proyecto
+#  Estructura del Proyecto
 
 - Diagramas UML de clases
 - Documentación del sistema
@@ -233,6 +340,6 @@ Pendiente → Cancelada
 
 ---
 
-# 10. Conclusión
+#  Conclusión
 
 Este sistema representa una solución estructurada para la gestión hotelera basada en programación orientada a objetos y modelado UML. Permite visualizar claramente las relaciones entre entidades y el flujo completo de una reserva.
