@@ -436,8 +436,9 @@ Puede estar:
 •	Confirmada 
 •	Cancelada 
 •	En curso 
-•	Finalizada 
+•	Finalizada
 
+```
 ---
 
 #  Modelo de Clases (UML)
