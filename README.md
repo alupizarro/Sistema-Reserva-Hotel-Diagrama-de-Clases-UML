@@ -206,6 +206,345 @@ EstadoReserva.java
 
 ---
 
+┌───────────────────────────────────────┐
+│                Cliente               │
+├───────────────────────────────────────┤
+│ - idCliente : int                    │
+│ - nombre : string                    │
+│ - apellido : string                  │
+│ - documento : string                 │
+│ - telefono : string                  │
+│ - email : string                     │
+│ - direccion : string                 │
+├───────────────────────────────────────┤
+│ + registrarCliente()                 │
+│ + consultarReservas()                │
+│ + modificarDatos()                   │
+└───────────────────────────────────────┘
+                    │ 1
+                    │
+                    │ realiza
+                    │
+                    │ *
+┌───────────────────────────────────────┐
+│                Reserva               │
+├───────────────────────────────────────┤
+│ - idReserva : int                    │
+│ - fechaEntrada : date                │
+│ - fechaSalida : date                 │
+│ - cantidadNoches : int               │
+│ - cantidadHuespedes : int            │
+│ - estado : string                    │
+│ - total : double                     │
+│ - fechaReserva : date                │
+├───────────────────────────────────────┤
+│ + crearReserva()                     │
+│ + modificarReserva()                 │
+│ + cancelarReserva()                  │
+│ + confirmarReserva()                 │
+│ + calcularTotal()                    │
+│ + validarFechas()                    │
+│ + verificarDisponibilidad()          │
+│ + generarComprobante()               │
+│ + registrarCheckIn()                 │
+│ + registrarCheckOut()                │
+└───────────────────────────────────────┘
+                    │ *
+                    │
+                    │ incluye
+                    │
+                    │ 1
+┌───────────────────────────────────────┐
+│              Habitacion              │
+├───────────────────────────────────────┤
+│ - numero : int                       │
+│ - tipo : string                      │
+│ - precio : double                    │
+│ - capacidad : int                    │
+│ - servicios : string                 │
+│ - piso : int                         │
+│ - disponible : boolean               │
+│ - estado : string                    │
+├───────────────────────────────────────┤
+│ + consultarDisponibilidad()          │
+│ + actualizarDisponibilidad()         │
+│ + mostrarInformacion()               │
+│ + cambiarEstado()                    │
+└───────────────────────────────────────┘
+                    │ 1
+                    │
+                    │ genera
+                    │
+                    │ 1
+┌───────────────────────────────────────┐
+│                 Pago                 │
+├───────────────────────────────────────┤
+│ - idPago : int                       │
+│ - fechaPago : date                   │
+│ - importe : double                   │
+│ - metodoPago : string                │
+│ - estadoPago : string                │
+├───────────────────────────────────────┤
+│ + registrarPago()                    │
+│ + validarPago()                      │
+│ + emitirComprobantePago()            │
+└───────────────────────────────────────┘
+
+
+┌───────────────────────────────────────┐
+│            Recepcionista             │
+├───────────────────────────────────────┤
+│ - idRecepcionista : int              │
+│ - nombre : string                    │
+│ - apellido : string                  │
+│ - usuario : string                   │
+│ - contraseña : string                │
+│ - turno : string                     │
+├───────────────────────────────────────┤
+│ + verReservas()                      │
+│ + confirmarReserva()                 │
+│ + cancelarReserva()                  │
+│ + gestionarEstados()                 │
+│ + generarComprobante()               │
+│ + registrarCheckIn()                 │
+│ + registrarCheckOut()                │
+│ + registrarCliente()                 │
+└───────────────────────────────────────┘
+                    │
+                    │ administra
+                    ▼
+┌───────────────────────────────────────┐
+│                Reserva               │
+└───────────────────────────────────────┘
+
+
+┌───────────────────────────────────────┐
+│             Administrador            │
+├───────────────────────────────────────┤
+│ - idAdministrador : int              │
+│ - nombre : string                    │
+│ - apellido : string                  │
+│ - usuario : string                   │
+│ - contraseña : string                │
+├───────────────────────────────────────┤
+│ + gestionarHabitaciones()            │
+│ + agregarHabitacion()                │
+│ + eliminarHabitacion()               │
+│ + modificarHabitacion()              │
+│ + gestionarPagos()                   │
+│ + generarReportes()                  │
+│ + controlarDisponibilidad()          │
+│ + administrarSistema()               │
+└───────────────────────────────────────┘
+            │                  │
+            │ gestiona         │ genera
+            ▼                  ▼
+
+┌───────────────────────────┐    ┌────────────────────────────┐
+│        Habitacion         │    │          Reporte           │
+├───────────────────────────┤    ├────────────────────────────┤
+│ - numero : int            │    │ - idReporte : int          │
+│ - tipo : string           │    │ - tipoReporte : string     │
+│ - precio : double         │    │ - fechaGeneracion : date   │
+│ - capacidad : int         │    │ - descripcion : string     │
+└───────────────────────────┘    ├────────────────────────────┤
+                                 │ + generarReporte()         │
+                                 │ + exportarPDF()            │
+                                 │ + mostrarReporte()         │
+                                 └────────────────────────────┘
+
+
+
+┌───────────────────────────────────────┐
+│             Comprobante              │
+├───────────────────────────────────────┤
+│ - idComprobante : int                │
+│ - fechaEmision : date                │
+│ - tipo : string                      │
+│ - detalle : string                   │
+├───────────────────────────────────────┤
+│ + generarComprobante()               │
+│ + imprimirComprobante()              │
+│ + enviarComprobante()                │
+└───────────────────────────────────────┘
+
+
+                    Reserva
+                       │
+                       │ genera
+                       ▼
+            ┌─────────────────────┐
+            │    Comprobante      │
+            └─────────────────────┘
+
+
+
+┌───────────────────────────────────────┐
+│           EstadoReserva              │
+├───────────────────────────────────────┤
+│ - pendiente                          │
+│ - confirmada                         │
+│ - cancelada                          │
+│ - enCurso                            │
+│ - finalizada                         │
+└───────────────────────────────────────┘
+
+---
+
+El cuadro se divide en 3 partes:
+1. Nombre de la clase
+Ejemplo:
+•	Cliente 
+•	Reserva 
+•	Habitación 
+•	Pago 
+La clase representa un objeto del sistema.
+________________________________________
+2. Atributos
+Son los datos que guarda la clase.
+Ejemplo de Cliente: 
+•	idCliente 
+•	nombre 
+•	apellido 
+•	documento 
+•	teléfono 
+•	email 
+Eso significa que cada cliente tendrá esos datos almacenados.
+________________________________________
+3. Métodos
+Son las acciones o funciones que puede hacer la clase.
+Ejemplo: 
+•	registrarCliente() 
+•	consultarReservas() 
+•	modificarDatos() 
+Los paréntesis indican que es una función.
+________________________________________
+Explicación de cada clase del diagrama
+Clase Cliente
+Representa a la persona que reserva una habitación. 
+Guarda:
+•	ID del cliente 
+•	Nombre 
+•	Documento 
+•	Teléfono 
+•	Dirección 
+Puede hacer:
+•	Registrarse 
+•	Consultar reservas 
+•	Modificar sus datos 
+________________________________________
+Clase Reserva
+Representa una reserva del hotel. 
+Guarda:
+•	Fecha de entrada 
+•	Fecha de salida 
+•	Cantidad de noches 
+•	Cantidad de huéspedes 
+•	Estado de la reserva 
+•	Total a pagar 
+Puede hacer:
+•	Crear reserva 
+•	Modificar reserva 
+•	Cancelar reserva 
+•	Confirmar reserva 
+•	Calcular total 
+•	Validar fechas 
+•	Verificar disponibilidad 
+•	Registrar check-in 
+•	Registrar check-out 
+________________________________________
+Clase Habitación
+Representa las habitaciones del hotel. 
+Guarda:
+•	Número 
+•	Tipo 
+•	Precio 
+•	Capacidad 
+•	Servicios 
+•	Piso 
+•	Disponibilidad 
+•	Estado 
+Puede hacer:
+•	Consultar disponibilidad 
+•	Actualizar disponibilidad 
+•	Mostrar información 
+•	Cambiar estado 
+________________________________________
+Clase Pago
+Representa el pago de una reserva. 
+Guarda:
+•	ID del pago 
+•	Fecha 
+•	Importe 
+•	Método de pago 
+•	Estado del pago 
+Puede hacer:
+•	Registrar pago 
+•	Validar pago 
+•	Emitir comprobante 
+________________________________________
+Clase Recepcionista
+Representa al empleado que maneja reservas. 
+Guarda:
+•	ID 
+•	Nombre 
+•	Usuario 
+•	Contraseña 
+•	Turno 
+Puede hacer:
+•	Ver reservas 
+•	Confirmar reservas 
+•	Cancelar reservas 
+•	Gestionar estados 
+•	Registrar clientes 
+•	Hacer check-in y check-out 
+________________________________________
+Clase Administrador
+Representa al administrador del sistema. 
+Puede hacer:
+•	Gestionar habitaciones 
+•	Agregar habitaciones 
+•	Eliminar habitaciones 
+•	Modificar habitaciones 
+•	Gestionar pagos 
+•	Generar reportes 
+•	Administrar el sistema 
+________________________________________
+Clase Reporte
+Representa informes del sistema. 
+Guarda:
+•	ID del reporte 
+•	Tipo de reporte 
+•	Fecha 
+•	Descripción 
+Puede hacer:
+•	Generar reportes 
+•	Exportar PDF 
+•	Mostrar reportes 
+________________________________________
+Clase Comprobante
+Representa comprobantes emitidos. 
+Guarda:
+•	ID 
+•	Fecha 
+•	Tipo 
+•	Detalle 
+Puede hacer:
+•	Generar comprobante 
+•	Imprimir comprobante 
+•	Enviar comprobante 
+________________________________________
+EstadoReserva
+Es una enumeración de estados posibles de una reserva. 
+Puede estar:
+•	Pendiente 
+•	Confirmada 
+•	Cancelada 
+•	En curso 
+•	Finalizada 
+
+---
+
 #  Modelo de Clases (UML)
 
 ##  Relaciones principales
