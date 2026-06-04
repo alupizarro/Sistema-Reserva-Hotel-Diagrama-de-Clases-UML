@@ -206,20 +206,21 @@ EstadoReserva.java
 
 ---
 
+```text
 ┌───────────────────────────────────────┐
-│                Cliente               │
+│                Cliente                │
 ├───────────────────────────────────────┤
-│ - idCliente : int                    │
-│ - nombre : string                    │
-│ - apellido : string                  │
-│ - documento : string                 │
-│ - telefono : string                  │
-│ - email : string                     │
-│ - direccion : string                 │
+│ - idCliente : int                     │
+│ - nombre : string                     │
+│ - apellido : string                   │
+│ - documento : string                  │
+│ - telefono : string                   │
+│ - email : string                      │
+│ - direccion : string                  │
 ├───────────────────────────────────────┤
-│ + registrarCliente()                 │
-│ + consultarReservas()                │
-│ + modificarDatos()                   │
+│ + registrarCliente()                  │
+│ + consultarReservas()                 │
+│ + modificarDatos()                    │
 └───────────────────────────────────────┘
                     │ 1
                     │
@@ -227,27 +228,27 @@ EstadoReserva.java
                     │
                     │ *
 ┌───────────────────────────────────────┐
-│                Reserva               │
+│                Reserva                │
 ├───────────────────────────────────────┤
-│ - idReserva : int                    │
-│ - fechaEntrada : date                │
-│ - fechaSalida : date                 │
-│ - cantidadNoches : int               │
-│ - cantidadHuespedes : int            │
-│ - estado : string                    │
-│ - total : double                     │
-│ - fechaReserva : date                │
+│ - idReserva : int                     │
+│ - fechaEntrada : date                 │
+│ - fechaSalida : date                  │
+│ - cantidadNoches : int                │
+│ - cantidadHuespedes : int             │
+│ - estado : string                     │
+│ - total : double                      │
+│ - fechaReserva : date                 │
 ├───────────────────────────────────────┤
-│ + crearReserva()                     │
-│ + modificarReserva()                 │
-│ + cancelarReserva()                  │
-│ + confirmarReserva()                 │
-│ + calcularTotal()                    │
-│ + validarFechas()                    │
-│ + verificarDisponibilidad()          │
-│ + generarComprobante()               │
-│ + registrarCheckIn()                 │
-│ + registrarCheckOut()                │
+│ + crearReserva()                      │
+│ + modificarReserva()                  │
+│ + cancelarReserva()                   │
+│ + confirmarReserva()                  │
+│ + calcularTotal()                     │
+│ + validarFechas()                     │
+│ + verificarDisponibilidad()           │
+│ + generarComprobante()                │
+│ + registrarCheckIn()                  │
+│ + registrarCheckOut()                 │
 └───────────────────────────────────────┘
                     │ *
                     │
@@ -255,21 +256,21 @@ EstadoReserva.java
                     │
                     │ 1
 ┌───────────────────────────────────────┐
-│              Habitacion              │
+│              Habitacion               │
 ├───────────────────────────────────────┤
-│ - numero : int                       │
-│ - tipo : string                      │
-│ - precio : double                    │
-│ - capacidad : int                    │
-│ - servicios : string                 │
-│ - piso : int                         │
-│ - disponible : boolean               │
-│ - estado : string                    │
+│ - numero : int                        │
+│ - tipo : string                       │
+│ - precio : double                     │
+│ - capacidad : int                     │
+│ - servicios : string                  │
+│ - piso : int                          │
+│ - disponible : boolean                │
+│ - estado : string                     │
 ├───────────────────────────────────────┤
-│ + consultarDisponibilidad()          │
-│ + actualizarDisponibilidad()         │
-│ + mostrarInformacion()               │
-│ + cambiarEstado()                    │
+│ + consultarDisponibilidad()           │
+│ + actualizarDisponibilidad()          │
+│ + mostrarInformacion()                │
+│ + cambiarEstado()                     │
 └───────────────────────────────────────┘
                     │ 1
                     │
@@ -277,118 +278,12 @@ EstadoReserva.java
                     │
                     │ 1
 ┌───────────────────────────────────────┐
-│                 Pago                 │
+│                 Pago                  │
 ├───────────────────────────────────────┤
-│ - idPago : int                       │
-│ - fechaPago : date                   │
-│ - importe : double                   │
-│ - metodoPago : string                │
-│ - estadoPago : string                │
-├───────────────────────────────────────┤
-│ + registrarPago()                    │
-│ + validarPago()                      │
-│ + emitirComprobantePago()            │
-└───────────────────────────────────────┘
-
-
-┌───────────────────────────────────────┐
-│            Recepcionista             │
-├───────────────────────────────────────┤
-│ - idRecepcionista : int              │
-│ - nombre : string                    │
-│ - apellido : string                  │
-│ - usuario : string                   │
-│ - contraseña : string                │
-│ - turno : string                     │
-├───────────────────────────────────────┤
-│ + verReservas()                      │
-│ + confirmarReserva()                 │
-│ + cancelarReserva()                  │
-│ + gestionarEstados()                 │
-│ + generarComprobante()               │
-│ + registrarCheckIn()                 │
-│ + registrarCheckOut()                │
-│ + registrarCliente()                 │
-└───────────────────────────────────────┘
-                    │
-                    │ administra
-                    ▼
-┌───────────────────────────────────────┐
-│                Reserva               │
-└───────────────────────────────────────┘
-
-
-┌───────────────────────────────────────┐
-│             Administrador            │
-├───────────────────────────────────────┤
-│ - idAdministrador : int              │
-│ - nombre : string                    │
-│ - apellido : string                  │
-│ - usuario : string                   │
-│ - contraseña : string                │
-├───────────────────────────────────────┤
-│ + gestionarHabitaciones()            │
-│ + agregarHabitacion()                │
-│ + eliminarHabitacion()               │
-│ + modificarHabitacion()              │
-│ + gestionarPagos()                   │
-│ + generarReportes()                  │
-│ + controlarDisponibilidad()          │
-│ + administrarSistema()               │
-└───────────────────────────────────────┘
-            │                  │
-            │ gestiona         │ genera
-            ▼                  ▼
-
-┌───────────────────────────┐    ┌────────────────────────────┐
-│        Habitacion         │    │          Reporte           │
-├───────────────────────────┤    ├────────────────────────────┤
-│ - numero : int            │    │ - idReporte : int          │
-│ - tipo : string           │    │ - tipoReporte : string     │
-│ - precio : double         │    │ - fechaGeneracion : date   │
-│ - capacidad : int         │    │ - descripcion : string     │
-└───────────────────────────┘    ├────────────────────────────┤
-                                 │ + generarReporte()         │
-                                 │ + exportarPDF()            │
-                                 │ + mostrarReporte()         │
-                                 └────────────────────────────┘
-
-
-
-┌───────────────────────────────────────┐
-│             Comprobante              │
-├───────────────────────────────────────┤
-│ - idComprobante : int                │
-│ - fechaEmision : date                │
-│ - tipo : string                      │
-│ - detalle : string                   │
-├───────────────────────────────────────┤
-│ + generarComprobante()               │
-│ + imprimirComprobante()              │
-│ + enviarComprobante()                │
-└───────────────────────────────────────┘
-
-
-                    Reserva
-                       │
-                       │ genera
-                       ▼
-            ┌─────────────────────┐
-            │    Comprobante      │
-            └─────────────────────┘
-
-
-
-┌───────────────────────────────────────┐
-│           EstadoReserva              │
-├───────────────────────────────────────┤
-│ - pendiente                          │
-│ - confirmada                         │
-│ - cancelada                          │
-│ - enCurso                            │
-│ - finalizada                         │
-└───────────────────────────────────────┘
-
+│ - idPago : int                        │
+│ - fechaPago : date                    │
+│ - importe : double                    │
+│ -
 ---
 
 El cuadro se divide en 3 partes:
