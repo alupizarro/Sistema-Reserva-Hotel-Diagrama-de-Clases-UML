@@ -14,7 +14,7 @@ public class clientes {
 
     // CONSTRUCTOR
 
-    public Cliente(int idCliente, String nombre, String apellido,
+    public void Cliente(int idCliente, String nombre, String apellido,
                    String dni, String telefono, String correo) {
 
         this.idCliente = idCliente;

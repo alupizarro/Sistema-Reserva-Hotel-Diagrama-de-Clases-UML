@@ -1,4 +1,4 @@
-public class Recepcionista {
+ package Recepcionista;public class Recepcionista {
 
 // ATRIBUTOS
 
